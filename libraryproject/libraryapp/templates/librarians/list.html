@@ -1,0 +1,18 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+    <h1>Librarians</h1>
+
+    {% comment %} <a href="{% url 'libraryapp:librarian_form' %}">Provide to the Kitty Baby another subservient being</a> {% endcomment %}
+
+    <ol>
+    {% for librarian in all_librarians %}
+        <li>
+            <a href="{% url 'libraryapp:librarian' librarian.id %}"> {{ librarian.first_name }} {{ librarian.last_name }}</a>
+            {{ librarian.email}}
+        </li>        
+    {% endfor %}
+    </ol>
+
+{% endblock %}
